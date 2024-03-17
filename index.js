@@ -13,7 +13,7 @@ app.use(cookieParser())
 
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://65f73962ed117bb521781504--astounding-gelato-f7bee8.netlify.app/",
   optionsSuccessStatus: 204,
   credentials: true
 }
