@@ -5,6 +5,10 @@ const middleware = require("../middleware/middleware")
 const userSchema = require("../models/Auth")
 const noteSchema = require("../models/Note")
 
+router.get("/",(req,res)=>{
+    res.send({name:"safiullah ansari"})
+})
+
 router.get("/allnotes",middleware,async(req,res)=>{
     try {
         const allNotes = await noteSchema.find()
