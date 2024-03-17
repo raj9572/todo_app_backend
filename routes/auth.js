@@ -142,7 +142,7 @@ router.get("/getmyprofile",middleware,async(req,res)=>{
 function generateToken(data){
 
     const token = jwt.sign(data,process.env.SECRET_TOKEN,{
-         expiresIn: '10s' 
+         expiresIn: '10d' 
     })
     return token
 
