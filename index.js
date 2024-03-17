@@ -13,7 +13,7 @@ app.use(cookieParser())
 
 
 app.use(cors({
-  origin: 'https://astounding-gelato-f7bee8.netlify.app/',
+  origin: 'https://astounding-gelato-f7bee8.netlify.app',
   optionsSuccessStatus: 204,
   credentials: true
 }
