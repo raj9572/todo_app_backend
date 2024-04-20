@@ -62,7 +62,7 @@ router.put("/",middleware,async(req,res)=>{
 router.delete("/",middleware,async(req,res)=>{
        try {
         // console.log(req.params)
-         const {noteId} = req.body
+         const {noteId} = req.body.data
          
          const note = await noteSchema.findById(noteId)
          if(req.user._id !== note.user.toString()){
