@@ -62,13 +62,14 @@ router.put("/",middleware,async(req,res)=>{
 router.delete("/",middleware,async(req,res)=>{
        try {
         // console.log(req.params)
-         const {noteId} = req.body.data
-         
-         const note = await noteSchema.findById(noteId)
+        const {noteId} = req.body
+        // console.log(noteId)
+        const note = await noteSchema.findById(noteId)
          if(req.user._id !== note.user.toString()){
             return res.json(Error("you can not delete this note",400))
          }
 
+         const deletedNote = await noteSchema.findByIdAndDelete(noteId)
          const user = await userSchema.findById(req.user._id)
          user.notes = user.notes.filter(id=>id.toString() !== noteId)
          await user.save()
