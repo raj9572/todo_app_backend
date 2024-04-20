@@ -7,9 +7,13 @@ const cookieParser = require('cookie-parser')
 const cors = require("cors")
 
 app.use(cors({
-  origin: 'https://astounding-gelato-f7bee8.netlify.app',
+  origin: 'https://heroic-wisp-cc8f1f.netlify.app',
   credentials: true
 }))
+// app.use(cors({
+//   origin: 'http://localhost:3000',
+//   credentials: true
+// }))
 
 // middleware
 app.use(express.json())
