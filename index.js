@@ -13,7 +13,7 @@ app.use(cookieParser())
 
 
 app.use(cors({
-  origin: 'https://astounding-gelato-f7bee8.netlify.app',
+  origin: "*",
   optionsSuccessStatus: 204,
   credentials: true
 }
@@ -23,6 +23,9 @@ app.use(cors({
 app.use("/api/auth", require("./routes/auth"))
 app.use("/api/note", require("./routes/note"))
 
+app.get("/raj",(req,res)=>{
+  return res.send('app is coming')
+})
 
 
 app.listen(port, () => {
