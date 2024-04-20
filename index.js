@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser')
 const cors = require("cors")
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://astounding-gelato-f7bee8.netlify.app',
   credentials: true
 }))
 
