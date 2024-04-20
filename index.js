@@ -4,20 +4,18 @@ const app = express();
 const port = process.env.PORT || 8080;
 const connectToDb = require('./db')
 const cookieParser = require('cookie-parser')
-var cors = require("cors")
+const cors = require("cors")
 
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}))
 
 // middleware
 app.use(express.json())
 app.use(cookieParser())
 
 
-app.use(cors({
-  origin: "*",
-  optionsSuccessStatus: 204,
-  credentials: true
-}
-))
 
 
 app.use("/api/auth", require("./routes/auth"))
